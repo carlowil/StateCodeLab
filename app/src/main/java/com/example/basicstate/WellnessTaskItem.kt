@@ -37,21 +37,10 @@ fun WellnessTaskItem(
         )
         Checkbox(
             checked = checked,
-            onCheckedChange = onCheckedChange)
+            onCheckedChange = onCheckedChange
+        )
         IconButton(onClick = onClose) {
             Icon(imageVector = Icons.Filled.Close, contentDescription = "Close")
         }
     }
-}
-
-@Composable
-fun WellnessTaskItem(taskName: String, modifier: Modifier = Modifier, onClose: () -> Unit) {
-    var checkedState by rememberSaveable { mutableStateOf(false) }
-    WellnessTaskItem(
-        taskName = taskName,
-        checked = checkedState,
-        onCheckedChange = { newValue -> checkedState = newValue },
-        onClose = onClose,
-        modifier = modifier
-    )
 }
